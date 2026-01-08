@@ -59,7 +59,7 @@ function AdminPanel() {
   };
 
   if (loading) {
-    return <div className="loading">Cargando...</div>;
+    return <div className="loading">Loading...</div>;
   }
 
   return (
@@ -67,50 +67,50 @@ function AdminPanel() {
       <div className="admin-header">
         <div>
           <h1 className="main-title">ASTROCOIN</h1>
-          <p className="admin-badge">🔐 Panel de Administración</p>
+          <p className="admin-badge">🔐 Admin Panel</p>
         </div>
         <button onClick={handleLogout} className="logout-button">
-          Cerrar Sesión
+          Logout
         </button>
       </div>
 
       {user && (
         <div className="admin-info">
-          <h2>Bienvenido, {user.nombre}</h2>
+          <h2>Welcome, {user.nombre}</h2>
           <p><strong>Email:</strong> {user.email}</p>
-          <p><strong>Rol:</strong> Administrador</p>
+          <p><strong>Role:</strong> Administrator</p>
         </div>
       )}
 
       <div className="admin-sections">
         <div className="admin-card">
-          <h3>👥 Gestión de Usuarios</h3>
-          <p>Gestiona los usuarios del sistema</p>
+          <h3>👥 User Management</h3>
+          <p>Manage system users</p>
           <button onClick={loadUsers} className="admin-button" disabled={loadingUsers}>
-            {loadingUsers ? 'Cargando...' : 'Ver Usuarios'}
+            {loadingUsers ? 'Loading...' : 'View Users'}
           </button>
         </div>
 
         <div className="admin-card">
-          <h3>📊 Estadísticas</h3>
-          <p>Visualiza estadísticas del sistema</p>
+          <h3>📊 Statistics</h3>
+          <p>View system statistics</p>
           <button className="admin-button" disabled>
-            Próximamente
+            Coming Soon
           </button>
         </div>
 
         <div className="admin-card">
-          <h3>⚙️ Configuración</h3>
-          <p>Configuración del sistema</p>
+          <h3>⚙️ Settings</h3>
+          <p>System configuration</p>
           <button className="admin-button" disabled>
-            Próximamente
+            Coming Soon
           </button>
         </div>
       </div>
 
       {users.length > 0 && (
         <div className="users-list">
-          <h3>Lista de Usuarios</h3>
+          <h3>User List</h3>
           <div className="users-table">
             {users.map((u) => (
               <div key={u.id} className="user-item">

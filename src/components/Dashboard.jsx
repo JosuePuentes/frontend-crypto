@@ -36,7 +36,7 @@ function Dashboard() {
   };
 
   if (loading) {
-    return <div className="loading">Cargando...</div>;
+    return <div className="loading">Loading...</div>;
   }
 
   return (
@@ -44,29 +44,29 @@ function Dashboard() {
       <div className="dashboard-header">
         <h1 className="main-title">ASTROCOIN</h1>
         <button onClick={handleLogout} className="logout-button">
-          Cerrar Sesión
+          Logout
         </button>
       </div>
 
       {user && (
         <div className="user-info">
-          <h2>Tu Perfil</h2>
+          <h2>Your Profile</h2>
           <div className="info-card">
-            <p><strong>Nombre:</strong> {user.nombre}</p>
+            <p><strong>Name:</strong> {user.nombre}</p>
             <p><strong>Email:</strong> {user.email}</p>
             {user.telefono && (
-              <p><strong>Teléfono:</strong> {user.telefono}</p>
+              <p><strong>Phone:</strong> {user.telefono}</p>
             )}
-            <p><strong>Fecha de Registro:</strong> {
-              new Date(user.fechaRegistro).toLocaleDateString('es-ES')
+            <p><strong>Registration Date:</strong> {
+              new Date(user.fechaRegistro).toLocaleDateString('en-US')
             }</p>
           </div>
         </div>
       )}
 
       <div className="crypto-info">
-        <h2>🚀 La Criptomoneda del Futuro</h2>
-        <p>Bienvenido a ASTROCOIN - Próximamente: Funcionalidades de trading, wallet, y más...</p>
+        <h2>🚀 The Cryptocurrency of the Future</h2>
+        <p>Welcome to ASTROCOIN - Coming soon: Trading features, wallet, and more...</p>
       </div>
     </div>
   );

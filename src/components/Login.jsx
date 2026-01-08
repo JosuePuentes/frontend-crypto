@@ -42,7 +42,7 @@ function Login() {
       setError(
         err.response?.data?.message || 
         err.message || 
-        'Credenciales inválidas. Intenta nuevamente.'
+        'Invalid credentials. Please try again.'
       );
     } finally {
       setLoading(false);
@@ -53,7 +53,7 @@ function Login() {
     <div className="login-container">
       <div className="login-card">
         <h1 className="main-title">ASTROCOIN</h1>
-        <p className="subtitle">Inicia sesión en tu cuenta</p>
+        <p className="subtitle">Login to your account</p>
 
         {error && <div className="error-message">{error}</div>}
 
@@ -64,7 +64,7 @@ function Login() {
               type="email"
               id="email"
               name="email"
-              placeholder="tu@email.com"
+              placeholder="your@email.com"
               value={formData.email}
               onChange={handleChange}
               required
@@ -72,12 +72,12 @@ function Login() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="password">Contraseña</label>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               id="password"
               name="password"
-              placeholder="Tu contraseña"
+              placeholder="Your password"
               value={formData.password}
               onChange={handleChange}
               required
@@ -89,12 +89,12 @@ function Login() {
             className="submit-button"
             disabled={loading}
           >
-            {loading ? 'Iniciando sesión...' : 'Iniciar Sesión'}
+            {loading ? 'Logging in...' : 'Login'}
           </button>
         </form>
 
         <p className="register-link">
-          ¿No tienes cuenta? <a href="/register">Regístrate aquí</a>
+          Don't have an account? <a href="/">Sign up here</a>
         </p>
       </div>
     </div>

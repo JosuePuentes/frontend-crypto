@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { authAPI } from '../services/api';
 import './Register.css';
 
-function Register() {
+function Register({ onClose }) {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     nombre: '',
@@ -31,7 +31,7 @@ function Register() {
 
     // Validaciones básicas
     if (formData.password.length < 6) {
-      setError('La contraseña debe tener al menos 6 caracteres');
+      setError('Password must be at least 6 characters');
       setLoading(false);
       return;
     }
@@ -42,6 +42,7 @@ function Register() {
       if (response.success) {
         setSuccess(true);
         setTimeout(() => {
+          if (onClose) onClose();
           navigate('/dashboard');
         }, 1500);
       }
@@ -49,7 +50,7 @@ function Register() {
       setError(
         err.response?.data?.message || 
         err.message || 
-        'Error al registrar usuario. Intenta nuevamente.'
+        'Error registering user. Please try again.'
       );
     } finally {
       setLoading(false);
@@ -60,23 +61,23 @@ function Register() {
     <div className="register-container">
       <div className="register-card">
         <h1 className="main-title">ASTROCOIN</h1>
-        <p className="subtitle">La criptomoneda que cambiará el juego</p>
+        <p className="subtitle">Join the Cryptocurrency Revolution</p>
 
         {error && <div className="error-message">{error}</div>}
         {success && (
           <div className="success-message">
-            ¡Registro exitoso! Redirigiendo...
+            Registration successful! Redirecting...
           </div>
         )}
 
         <form onSubmit={handleSubmit} className="register-form">
           <div className="form-group">
-            <label htmlFor="nombre">Nombre Completo</label>
+            <label htmlFor="nombre">Full Name</label>
             <input
               type="text"
               id="nombre"
               name="nombre"
-              placeholder="Ej: Juan Pérez"
+              placeholder="e.g., John Doe"
               value={formData.nombre}
               onChange={handleChange}
               required
@@ -90,7 +91,7 @@ function Register() {
               type="email"
               id="email"
               name="email"
-              placeholder="tu@email.com"
+              placeholder="your@email.com"
               value={formData.email}
               onChange={handleChange}
               required
@@ -98,12 +99,12 @@ function Register() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="password">Contraseña</label>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               id="password"
               name="password"
-              placeholder="Mínimo 6 caracteres"
+              placeholder="Minimum 6 characters"
               value={formData.password}
               onChange={handleChange}
               required
@@ -112,7 +113,7 @@ function Register() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="telefono">Teléfono (Opcional)</label>
+            <label htmlFor="telefono">Phone (Optional)</label>
             <input
               type="tel"
               id="telefono"
@@ -128,12 +129,12 @@ function Register() {
             className="submit-button"
             disabled={loading}
           >
-            {loading ? 'Registrando...' : 'Crear Cuenta'}
+            {loading ? 'Creating Account...' : 'Create Account'}
           </button>
         </form>
 
         <p className="login-link">
-          ¿Ya tienes cuenta? <a href="/login">Inicia sesión</a>
+          Already have an account? <a href="/login">Login here</a>
         </p>
       </div>
     </div>
