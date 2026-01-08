@@ -19,7 +19,7 @@ function Home() {
     <div className="home-container">
       {/* Floating Register Button */}
       <button className="floating-register-btn" onClick={toggleRegister}>
-        <span className="btn-icon">🚀</span>
+        <span className="btn-icon">₿</span>
         <span className="btn-text">Sign Up</span>
       </button>
 

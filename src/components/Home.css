@@ -45,6 +45,9 @@
 
 .btn-icon {
   font-size: 24px;
+  color: #c084fc;
+  text-shadow: 0 0 10px rgba(192, 132, 252, 0.6);
+  font-weight: bold;
 }
 
 /* Register Sidebar */
