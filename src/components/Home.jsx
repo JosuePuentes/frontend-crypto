@@ -49,6 +49,44 @@ function Home() {
               Login
             </button>
           </div>
+          
+          {/* Commercial Phrases */}
+          <div className="hero-commercials">
+            <div className="commercial-phrase">
+              <span className="commercial-icon">💎</span>
+              <p className="commercial-text">
+                <strong>Join 420M+ investors</strong> worldwide in the cryptocurrency revolution
+              </p>
+            </div>
+            
+            <div className="commercial-phrase">
+              <span className="commercial-icon">🚀</span>
+              <p className="commercial-text">
+                <strong>Trade 24/7</strong> with instant transactions and zero borders
+              </p>
+            </div>
+            
+            <div className="commercial-phrase">
+              <span className="commercial-icon">🔒</span>
+              <p className="commercial-text">
+                <strong>Bank-level security</strong> protecting your digital assets around the clock
+              </p>
+            </div>
+            
+            <div className="commercial-phrase">
+              <span className="commercial-icon">⚡</span>
+              <p className="commercial-text">
+                <strong>Lightning-fast</strong> blockchain technology for seamless trading
+              </p>
+            </div>
+            
+            <div className="commercial-phrase highlight">
+              <span className="commercial-icon">🌟</span>
+              <p className="commercial-text">
+                <strong>Don't miss out!</strong> The future of money is here. Start investing in ASTROCOIN today and be part of the financial revolution.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
