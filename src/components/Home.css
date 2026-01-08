@@ -25,11 +25,22 @@
   align-items: center;
   gap: 10px;
   transition: all 0.3s ease;
+  animation: floatButton 3s ease-in-out infinite;
+}
+
+@keyframes floatButton {
+  0%, 100% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(calc(-50% + 15px));
+  }
 }
 
 .floating-register-btn:hover {
   transform: translateY(-50%) scale(1.1);
   box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+  animation: none;
 }
 
 .btn-icon {
