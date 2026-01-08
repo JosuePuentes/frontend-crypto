@@ -40,7 +40,7 @@ function Home() {
       <section className="hero-section">
         <div className="hero-content">
           <h1 className="hero-title">ASTROCOIN</h1>
-          <p className="hero-subtitle">The Future of Digital Currency</p>
+          <p className="hero-subtitle">La moneda que cambiará el <span className="highlight-yellow">futuro</span></p>
           <div className="hero-buttons">
             <button className="btn-primary" onClick={toggleRegister}>
               Get Started
