@@ -50,11 +50,6 @@ function Home() {
             </button>
           </div>
         </div>
-        <div className="hero-animation">
-          <div className="crypto-icon">₿</div>
-          <div className="crypto-icon eth">Ξ</div>
-          <div className="crypto-icon astro">🚀</div>
-        </div>
       </section>
 
       {/* Features Section */}
